@@ -1,0 +1,365 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  color: #fff;
+}
+
+/* Floating Hearts */
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: url('') repeat;
+  animation: float 20s infinite;
+  opacity: 0.8;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 69, 122, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+  transition: transform 0.3s;
+}
+
+.nav-links li:hover {
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+/* Hero Carousel Section */
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-text {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: #fff;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-text h1 {
+  font-size: 4rem;
+  margin: 0;
+  animation: fadeIn 2s ease;
+}
+
+.carousel-text p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  animation: fadeIn 2.5s ease;
+}
+
+/* Carousel Controls */
+.carousel-controls button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #ff9a9e;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+  color: #fff;
+  position: relative;
+}
+
+.gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fad0c4;
+  color: #4a4a4a;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Love Note Section */
+.love-note {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+  color: #fff;
+}
+
+.love-note h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.love-note .note-container {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: glow 3s infinite alternate;
+}
+
+/* Glowing Effect */
+@keyframes glow {
+  from {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 1);
+  }
+}
+
+/* Secret Section */
+.secret {
+  display: none;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #333;
+  color: #fff;
+}
+
+/* Gift Button */
+.gift-container {
+  text-align: center;
+  margin: 2rem;
+}
+
+#gift-button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Memories Section */
+.memories {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  color: #fff;
+}
+
+.memories h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.memory-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.memory-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.memory-item:hover img {
+  transform: scale(1.1);
+}
+
+.memory-item::before {
+  content: attr(data-message);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+  text-align: center;
+}
+
+.memory-item:hover::before {
+  transform: translateY(0);
+}
+
+
+.floating-notes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.note {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #ff69b4;
+  animation: floatNote 10s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatNote {
+  from {
+    transform: translateY(100vh);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
